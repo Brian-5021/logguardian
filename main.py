@@ -1,12 +1,25 @@
 from lector import buscar_archivos, leer_log
+from analizador import analizar_linea
 
 
 def procesar_logs(ruta: str) -> dict:
     resultados = {}
 
     for archivo in buscar_archivos(ruta):
-        resultados[archivo] = leer_log(archivo)
+        lineas = leer_log(archivo)
+        hallazgos = []
 
+        for numero_linea, linea in enumerate(lineas, start=1):
+            linea_actual = analizar_linea(linea, numero_linea)
+
+            if linea_actual is not None:
+                hallazgos.append(linea_actual)
+
+        resultados[archivo] = hallazgos
 
     return resultados
+
+
+
+print(procesar_logs("logs"))
 
