@@ -1,6 +1,6 @@
 from lector import buscar_archivos, leer_log
 from analizador import analizar_linea
-
+from detector import detectar_evento
 
 def procesar_logs(ruta: str) -> dict:
     resultados = {}
@@ -13,12 +13,14 @@ def procesar_logs(ruta: str) -> dict:
             linea_actual = analizar_linea(linea, numero_linea)
 
             if linea_actual is not None:
-                hallazgos.append(linea_actual)
+                es_evento = detectar_evento(linea_actual)
 
+                if es_evento:
+                    hallazgos.append(linea_actual)
+                
         resultados[archivo] = hallazgos
 
     return resultados
-
 
 
 print(procesar_logs("logs"))
