@@ -1,3 +1,5 @@
 INFO User logged in
 WARNING Failed login attempt
 ERROR Database connection failed
+WARNING Failed login attempt
+WARNING Failed login attempt
