@@ -1,5 +1,5 @@
-INFO User logged in
-WARNING Failed login attempt
-ERROR Database connection failed
-WARNING Failed login attempt
-WARNING Failed login attempt
+2026-09-02 10:00:01 INFO User logged in
+2026-09-02 10:00:05 WARNING Failed login attempt
+2026-09-02 10:00:07 ERROR Database connection failed
+2026-09-02 10:00:10 WARNING Failed login attempt
+2026-09-02 10:00:12 WARNING Failed login attempt
