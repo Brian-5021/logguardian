@@ -1,5 +1,5 @@
-2026-09-02 10:00:01 INFO User logged in
-2026-09-02 10:00:05 WARNING Failed login attempt
-2026-09-02 10:00:07 ERROR Database connection failed
-2026-09-02 10:00:10 WARNING Failed login attempt
-2026-09-02 10:00:12 WARNING Failed login attempt
+2026-09-02 10:00:01 INFO 192.168.1.50 User logged in
+2026-09-02 10:00:05 WARNING 192.168.1.50 Failed login attempt
+2026-09-02 10:00:07 ERROR 192.168.1.50 Database connection failed
+2026-09-02 10:00:10 WARNING 192.168.1.50 Failed login attempt
+2026-09-02 10:00:12 WARNING 192.168.1.50 Failed login for user admin

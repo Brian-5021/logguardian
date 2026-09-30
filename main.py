@@ -20,7 +20,7 @@ def procesar_logs(ruta: str) -> dict:
                 if es_evento:
                     hallazgos.append(linea_actual)
 
-        patrones["fuerza_bruta"] = detectar_fuerza_bruta(hallazgos)
+        patrones = detectar_fuerza_bruta(hallazgos)
                 
         resultados[archivo] = {
             "hallazgos": hallazgos,
