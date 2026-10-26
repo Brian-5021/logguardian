@@ -115,3 +115,32 @@ def test_no_mezcla_eventos_de_diferentes_ips():
     resultado = detectar_fuerza_bruta(hallazgos)
 
     assert resultado["fuerza_bruta"] is False
+
+
+def test_detecta_fuerza_bruta_con_eventos_desordenados():
+    hallazgos = [
+        {
+            "timestamp": "2026-09-02 10:00:20",
+            "tipo": "WARNING",
+            "ip": "192.168.1.50",
+            "mensaje": "Failed login attempt"
+        },
+        {
+            "timestamp": "2026-09-02 10:00:05",
+            "tipo": "WARNING",
+            "ip": "192.168.1.50",
+            "mensaje": "Failed login attempt"
+        },
+        {
+            "timestamp": "2026-09-02 10:00:12",
+            "tipo": "WARNING",
+            "ip": "192.168.1.50",
+            "mensaje": "Failed login attempt"
+        }
+    ]
+
+    resultado = detectar_fuerza_bruta(hallazgos)
+
+    assert resultado["fuerza_bruta"] is True
+    assert resultado["ip"] == "192.168.1.50"
+    assert resultado["duracion_segundos"] == 15.0

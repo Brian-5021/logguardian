@@ -54,6 +54,8 @@ def detectar_fuerza_bruta(hallazgos: list[dict]) -> dict:
 
     for ip, eventos in eventos_por_ip.items():
 
+        eventos.sort(key=lambda evento: evento["timestamp"])
+
         for i in range(len(eventos) - 2):
             primera_fecha = eventos[i]["timestamp"]
             tercera_fecha = eventos[i + 2]["timestamp"]
