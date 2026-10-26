@@ -2,6 +2,7 @@ from lector import buscar_archivos, leer_log
 from analizador import analizar_linea
 from detector import detectar_evento
 from patrones import detectar_fuerza_bruta
+from reportes import mostrar_reporte
 
 def procesar_logs(ruta: str) -> dict:
     resultados = {}
@@ -31,5 +32,7 @@ def procesar_logs(ruta: str) -> dict:
     return resultados
 
 
-print(procesar_logs("logs"))
+if __name__ == "__main__":
+    resultados = procesar_logs("logs")
+    mostrar_reporte(resultados)
 
